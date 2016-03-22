@@ -4,10 +4,10 @@ import { Link } from 'react-router';
 export default class IndexPage extends Component {
   render() {
     return (
-      <div>
-        <h1>Hello, world!</h1>
-        <Link to="/todo">Go to TodoList</Link>
-      </div>
+      <nav>
+        <Link to="/">All books</Link>
+        <Link to="/authors">Authors</Link>
+      </nav>
     );
   }
 }
