@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+
+import NavBar from '../components/NavBar';
 
 export default class IndexPage extends Component {
   render() {
     return (
-      <nav>
-        <Link to="/">All books</Link>
-        <Link to="/authors">Authors</Link>
-      </nav>
+      <div>
+        <h1>Books DB</h1>
+        <NavBar />
+        {this.props.children}
+      </div>
     );
   }
 }

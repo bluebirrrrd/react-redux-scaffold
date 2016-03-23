@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 
-export class AuthorList extends Component {
-
+export default class AuthorList extends Component {
   render() {
     return (
-        <p> Hello from AuthorList Component! </p>
-      );
+      <section className="author-list">
+        Author List here
+      </section>
+    );
   }
-
 }

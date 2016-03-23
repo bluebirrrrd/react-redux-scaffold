@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 
-
-export class AuthorDetail extends Component {
-
+export default class AuthorDetail extends Component {
   render() {
+    const { authorId } = this.props.params;
     return (
-      <section className="authorDetail">
-        <p>Hello from AuthorDetail Component!</p>
+      <section className="author-detail">
+        Single Author {authorId} Detail here
       </section>
     );
   }
-
 }
