@@ -21,7 +21,7 @@ class BookList extends Component {
     }
 
     const books = this.props.books.toJS().map(book =>
-        <li key={book.id}><Link to={{ pathname: `/books/${book.id}` }}>{book.name} ({book.authors[0].name})</Link></li>
+        <li key={book.id}><Link to={{ pathname: `/books/${book.id}` }}>{book.name}</Link> by <Link to={{ pathname: `/authors/${book.authors[0].id}` }}>{ book.authors[0].name }</Link></li>
     );
 
     return (
