@@ -1,17 +1,17 @@
-# React Redux Scaffold
+# React Redux library app
 
-This is a seed project for building static react website, not for build universal app.
+## Pages:
+[List of all books available](localhost:3000/books)
+[Info about particular book](localhost:3000/books/1)
+[List of all authors](localhost:3000/authors)
+[Info about partticular author](localhost:3000/authors/1)
 
-## Feature
-- ES6+ support via [babel](https://babeljs.io)
-- Redux and its best practice (debug, style, routing)
 
 ## Setup
 
-- learn [Redux](http://redux.js.org)
 - clone this project
 - install dependencies via `npm install`
-- run a test server by `npm run server`
+- run a test server by `npm start`
 
 ## Scripts
 
@@ -40,7 +40,5 @@ Write your server mocks at `src/mocks`.
 
 ## TODO
 
-- [ ] create a better demo
-- [ ] create test suits
-- [x] update babel
-- [x] update redux-devtools
+- [ ] remove ToDo app example
+- [ ] implement filters
