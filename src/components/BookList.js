@@ -1,9 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
+import { List } from 'immutable';
 
 import { loadBooksSuccess, loadBooksFailure, loadBooksRequest } from '../actions/TodosAction.js';
 
+
 class BookList extends Component {
+  static propTypes = {
+    books: PropTypes.instanceOf(List).isRequired
+  };
 
   componentDidMount() {
     this.props.fetchPosts();
@@ -14,8 +20,8 @@ class BookList extends Component {
       return <p>Loading...</p>;
     }
 
-    const books = this.props.books.map(book =>
-        <p>{book}</p>
+    const books = this.props.books.toJS().map(book =>
+        <li key={book.id}><Link to={{ pathname: `/books/${book.id}` }}>{book.name} ({book.authors[0].name})</Link></li>
     );
 
     return (
@@ -30,7 +36,7 @@ class BookList extends Component {
 
 
 const mapStateToProps = (state) => ({
-  books: state.books // TODO: pass books here somehow
+  books: state.books
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -38,10 +44,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(loadBooksRequest());
     fetch('/api/books')
         .then((response) => response.json())
-        .then((json) => {
-          console.log(json);
-          return json;
-        }).then(
+        .then(
           (books) => dispatch(loadBooksSuccess(books)),
           (error) => dispatch(loadBooksFailure(error))
         );

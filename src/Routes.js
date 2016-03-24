@@ -5,9 +5,9 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import store from './lib/store';
 const history = syncHistoryWithStore(browserHistory, store);
 
-
 import IndexPage from 'pages/IndexPage';
 import TodoApp from 'components/TodoApp';
+
 import BooksList from 'components/BookList';
 import BookDetail from 'components/BookDetail';
 import AuthorsList from 'components/AuthorList';
@@ -20,9 +20,9 @@ export default class Routes extends Component {
         <Route path="/" component={IndexPage}>
             <Route path="todo" component={TodoApp} />
             <Route path="books" component={BooksList} />
-            <Route path="books/:id" component={BookDetail} />
+            <Route path="books/:bookId" component={BookDetail} />
             <Route path="authors" component={AuthorsList} />
-            <Route path="authors/:id" component={AuthorDetail} />
+            <Route path="authors/:authorId" component={AuthorDetail} />
         </Route>
       </Router>
     );
