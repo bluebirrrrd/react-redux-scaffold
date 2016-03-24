@@ -17,13 +17,11 @@ export default class AuthorDetail extends Component {
   render() {
     const { authorId } = this.props.params;
     const id = parseInt(authorId, 10);
-    console.log(id);
+
 
     const author = this.props.authors.toJS()
                       .filter(a => a.id === id)
                       .reduce((a, b) => b, {});
-    console.log(this.props.authors.toJS());
-    console.log(authorId);
 
     return (
       <section className="author-detail">
